@@ -29,11 +29,15 @@ As funcionalidades estão descritas abaixo, seguindo a ordem dos "commits" relac
 The features are described below, following the order of the "commits" related to each version of
 the project.
 
-- First commit (Created ContadorSinc):
-Criado a classe ContadorSinc. Essa classe foi construída pensando no uso compartilhado por diversas threads, e por isso o uso de synchronized se faz necessário. Tomemos como exemplo o método decrementar, na linha 13. A operação que esse método realiza é: "contador = contador - 1".
+- First commit (Created ContadorSinc)
+Criada a classe ContadorSinc. Essa classe foi construída pensando no uso compartilhado por diversas threads, e por isso o uso de synchronized se faz necessário. Tomemos como exemplo o método decrementar, na linha 13. A operação que esse método realiza é: "contador = contador - 1".
 A ocorrência de mais de uma chamada concorrente a esse método pode levar a uma condição de corrida, e, assim, usamos synchronized para impedir isso, garantindo que somente uma execução do método ocorra ao mesmo tempo.
 Created the CounterSync. This class was built with the shared use of several threads in mind, and therefore the use of synchronized is necessary. Let us take as an example the decrementar method, in line 13. The operation that this method performs is: "counter = counter - 1".
 The occurrence of more than one concurrent call to this method can lead to a race condition, and so we use synchronized to prevent this by ensuring that only one execution of the method occurs at the same time.
+
+- Created Class PoolProdutos
+Essa classe também é um contador que deve ser compartilhado por mais de uma thread, mas precisamos modelar um comportamento adicional, representado pelo método retirarProdutos na linha 21. Então estendemos ContadorSicn, especializando-a.
+This class is also a counter that must be shared by more than one thread, but we need to model additional behavior, represented by the Pull Out method on line 21. So we extended ContadorSicn, specializing it.
 
 ## Getting Started
 
