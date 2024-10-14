@@ -39,6 +39,10 @@ The occurrence of more than one concurrent call to this method can lead to a rac
 Essa classe também é um contador que deve ser compartilhado por mais de uma thread, mas precisamos modelar um comportamento adicional, representado pelo método retirarProdutos na linha 21. Então estendemos ContadorSicn, especializando-a.
 This class is also a counter that must be shared by more than one thread, but we need to model additional behavior, represented by the Pull Out method on line 21. So we extended ContadorSicn, specializing it.
 
+- Created Class Empacotador
+Nesse caso, estamos implementando Runnable. O método run simula o empacotamento. Para isso, na linha 39 colocamos a thread para dormir. O tempo em que uma thread é colocada para dormir é aleatório. Após isso, a trava sobre o semáforo é liberada e o contador de latch é decrementado por meio da invocação da linha 42. Na linha 13 definimos o nome da thread e que na linha 36 usamos synchronized aplicado à String lista_threads_id.
+In this case, I implemented Runnable. The run method simulates packaging. To do this, in line 39 we put the thread to sleep. The time at which a thread is put to sleep is random. After that, the lock on the traffic light is released and the latch counter is decremented by invoking line 42. In line 13 we set the thread name and in line 36 we use synchronized applied to the String lista_threads_id.
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
